@@ -7,7 +7,7 @@ $(document).ready(function() {
 
   var listTemplate = Handlebars.compile($('#list-template').html());
 
-  var BASE_URL = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/';
+  var BASE_URL = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/';
   var SELECTED_CLASS = 'btn-primary'
 
   var currentOptions = {
