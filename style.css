@@ -1,0 +1,54 @@
+.map {
+  position: absolute;
+  top: 0;
+  left: 400px;
+  bottom: 0;
+  right: 0;
+}
+.sidebar {
+  width: 400px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  position: relative;
+}
+.sidebar h1 {
+  margin-top: 0;
+  background-color: #028BCD;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 0;
+}
+.sidebar-controls {
+  background-color: #eee;
+  padding: 15px 10px;
+  padding-top: 0;
+  text-align: center;
+}
+.sidebar-controls label {
+  margin-top: 15px;
+}
+.earthquake {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+.earthquake:hover {
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
+.earthquake h4 {
+  font-weight: 200;
+  font-size: 20px;
+}
+.btn:focus, .btn:active {
+  outline: none;
+}
+.marker {
+  background-color: #028BCD;
+  opacity: 0.5;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+}

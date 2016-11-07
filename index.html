@@ -1,0 +1,58 @@
+<!doctype>
+<html>
+<head>
+  <title>Earthquake Tracker</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.css' rel='stylesheet' />
+  <link href='style.css' rel='stylesheet' />
+  <script type='text/x-handlebars-template' id='list-template'>
+    {{#if error}}
+      <div class='alert'>{{error}}</div>
+    {{/if}}
+    {{#each earthquakes}}
+      <div class='earthquake'>
+        <h4>{{title}}</h4>
+      </div>
+    {{/each}}
+  </script>
+</head>
+<body>
+  <div class='sidebar'>
+    <h1>Earthquake Tracker</h1>
+    <div class='sidebar-controls'>
+      <label>Magnitude</label>
+      <div class='sidebar-control-magnitude'>
+        <button type='button' class='btn btn-default' data-eq-magnitude='all'>All</button>
+        <button type='button' class='btn btn-default' data-eq-magnitude='1.0'>1.0+</button>
+        <button type='button' class='btn btn-default' data-eq-magnitude='2.5'>2.5+</button>
+        <button type='button' class='btn btn-default' data-eq-magnitude='4.5'>4.5+</button>
+        <button type='button' class='btn btn-default' data-eq-magnitude='significant'>Significant</button>
+      </div>
+      <label>In the last...</label>
+      <div class='sidebar-control-time'>
+        <button type='button' class='btn btn-default' data-eq-time='hour'>Hour</button>
+        <button type='button' class='btn btn-default' data-eq-time='day'>Day</button>
+        <button type='button' class='btn btn-default' data-eq-time='week'>Week</button>
+        <button type='button' class='btn btn-default' data-eq-time='month'>Month</button>
+      </div>
+    </div>
+    <div class='sidebar-list' id='sidebar-list'>
+      <div class='earthquake'>
+        <h4>My earthquake title</h4>
+      </div>
+      <div class='earthquake'>
+        <h4>My earthquake title</h4>
+      </div>
+      <div class='earthquake'>
+        <h4>My earthquake title</h4>
+      </div>
+    </div>
+  </div>
+  <div class='map' id='map'></div>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.26.0/mapbox-gl.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js" integrity="sha256-QHhbHxeq7BcXuPYY/Ag1hUAVg4MCgA2HPZRRwOr/QTg=" crossorigin="anonymous"></script>
+  <script type='text/javascript' src='script.js'></script>
+</body>
+</html>
